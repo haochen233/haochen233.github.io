@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>haochen233 tech</title>
-    <link>https://haochen233.github.io/</link>
-    <description>Recent content on haochen233 tech</description>
+    <title>Posts on haochen233 tech</title>
+    <link>https://haochen233.github.io/post/</link>
+    <description>Recent content in Posts on haochen233 tech</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 29 Jun 2021 16:41:44 +0800</lastBuildDate><atom:link href="https://haochen233.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 29 Jun 2021 16:41:44 +0800</lastBuildDate><atom:link href="https://haochen233.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>第一篇博客</title>
       <link>https://haochen233.github.io/post/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</link>
