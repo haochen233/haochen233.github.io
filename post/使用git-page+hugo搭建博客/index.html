@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>使用git Page&#43;hugo搭建博客 - haochen233 tech</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+		<meta property="og:title" content="使用git Page&#43;hugo搭建博客" />
+<meta property="og:description" content="1.使用环境准备：  安装go：hugo需要版本大于等于1.16。可以从Go官网下载所需要的go版本。  下载完成解压后需要配置环境变量（PATH、GOAPTH等） 检查go开发环境是否配置正确：$ go version   安装git：可以从git官网下载你所需要的系统和版本,这一步就略过了。  2.安装hugo： 使用go get 命令自动获取并安装  开启go mod: go env -w GOMODULE111=on 配置国内因为GFW的原因不能下载第三方包，所以需要配置代理来进行访问：go env -w GOPROXY=https://goproxy.io,direct 使用go get自动安装hugo: go get github.com/gohugoio/hugo 检查是否安装成功: hugo -h  3.为什么使用git page  免费托管 搭建简单  4.在github上创建blog仓库、git page仓库 为什么要创建两个仓库？
+ blog仓库是静态网站的开发环境 git page仓库是生产环境用来发布网站(仓库名必须是username.github.io,到时可以通过这个域名直接访问)。  例如(开发环境仓库)： 例如(生产环境仓库)： 5.使用hugo生成新站点  hugo new site [your site name]    使用git 添加远程仓库: git remote add origin https://github.com/haochen233/blog" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://haochen233.github.io/post/%E4%BD%BF%E7%94%A8git-page&#43;hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-06-30T13:28:33&#43;08:00" />
+<meta property="article:modified_time" content="2021-06-30T13:28:33&#43;08:00" />
+
+
+		<meta itemprop="name" content="使用git Page&#43;hugo搭建博客">
+<meta itemprop="description" content="1.使用环境准备：  安装go：hugo需要版本大于等于1.16。可以从Go官网下载所需要的go版本。  下载完成解压后需要配置环境变量（PATH、GOAPTH等） 检查go开发环境是否配置正确：$ go version   安装git：可以从git官网下载你所需要的系统和版本,这一步就略过了。  2.安装hugo： 使用go get 命令自动获取并安装  开启go mod: go env -w GOMODULE111=on 配置国内因为GFW的原因不能下载第三方包，所以需要配置代理来进行访问：go env -w GOPROXY=https://goproxy.io,direct 使用go get自动安装hugo: go get github.com/gohugoio/hugo 检查是否安装成功: hugo -h  3.为什么使用git page  免费托管 搭建简单  4.在github上创建blog仓库、git page仓库 为什么要创建两个仓库？
+ blog仓库是静态网站的开发环境 git page仓库是生产环境用来发布网站(仓库名必须是username.github.io,到时可以通过这个域名直接访问)。  例如(开发环境仓库)： 例如(生产环境仓库)： 5.使用hugo生成新站点  hugo new site [your site name]    使用git 添加远程仓库: git remote add origin https://github.com/haochen233/blog"><meta itemprop="datePublished" content="2021-06-30T13:28:33&#43;08:00" />
+<meta itemprop="dateModified" content="2021-06-30T13:28:33&#43;08:00" />
+<meta itemprop="wordCount" content="97">
+<meta itemprop="keywords" content="github,hugo," />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo logo--mixed">
+		<a class="logo__link" href="/" title="haochen233" rel="home">
+			<div class="logo__item logo__imagebox">
+					<img class="logo__img" src="/img/avatar.jpg">
+				</div><div class="logo__item logo__text">
+					<div class="logo__title">haochen233</div>
+					<div class="logo__tagline">why not me?</div>
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">
+				
+				<span class="menu__text">about me</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">使用git Page&#43;hugo搭建博客</h1>
+			<div class="post__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">zhang chenhao</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-06-30T13:28:33&#43;08:00">2021-06-30</time></div></div>
+		</header>
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1使用环境准备">1.使用环境准备：</a></li>
+        <li><a href="#2安装hugo">2.安装hugo：</a></li>
+        <li><a href="#3为什么使用git-page">3.为什么使用git page</a></li>
+        <li><a href="#4在github上创建blog仓库git-page仓库">4.在github上创建blog仓库、git page仓库</a></li>
+        <li><a href="#5使用hugo生成新站点">5.使用hugo生成新站点</a></li>
+        <li><a href="#6将hugo静态网站部署到git-page上">6.将hugo静态网站部署到git page上。</a></li>
+        <li><a href="#7访问站点">7.访问站点</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+	</div>
+</div><div class="content post__content clearfix">
+			<h3 id="1使用环境准备">1.使用环境准备：</h3>
+<ol>
+<li>安装go：hugo需要版本大于等于1.16。可以从<a href="https://golang.google.cn/dl/">Go官网</a>下载所需要的go版本。
+<ul>
+<li>下载完成解压后需要配置环境变量（PATH、GOAPTH等）</li>
+<li>检查go开发环境是否配置正确：<code>$ go version</code></li>
+</ul>
+</li>
+<li>安装git：可以从<a href="https://git-scm.com/downloads">git官网</a>下载你所需要的系统和版本,这一步就略过了。</li>
+</ol>
+<h3 id="2安装hugo">2.安装hugo：</h3>
+<h4 id="使用go-get-命令自动获取并安装">使用go get 命令自动获取并安装</h4>
+<ul>
+<li>开启go mod: <code>go env -w GOMODULE111=on</code></li>
+<li>配置国内因为GFW的原因不能下载第三方包，所以需要配置代理来进行访问：<code>go env -w GOPROXY=https://goproxy.io,direct</code></li>
+<li>使用<strong>go get</strong>自动安装hugo: <code>go get github.com/gohugoio/hugo</code></li>
+<li>检查是否安装成功: <code>hugo -h</code></li>
+</ul>
+<h3 id="3为什么使用git-page">3.为什么使用git page</h3>
+<ol>
+<li>免费托管</li>
+<li>搭建简单</li>
+</ol>
+<h3 id="4在github上创建blog仓库git-page仓库">4.在github上创建blog仓库、git page仓库</h3>
+<p>为什么要创建两个仓库？</p>
+<ul>
+<li><strong>blog</strong>仓库是静态网站的开发环境</li>
+<li><strong>git page</strong>仓库是生产环境用来发布网站(仓库名必须是<a href="https://haochen233.github.io">username.github.io</a>,到时可以通过这个域名直接访问)。</li>
+</ul>
+<p>例如(开发环境仓库)：
+<img src="/img/post/%E4%BD%BF%E7%94%A8git-page+hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/blog.png" alt="development">
+例如(生产环境仓库)：
+<img src="/img/post/%E4%BD%BF%E7%94%A8git-page+hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/haochen233.png" alt="production"></p>
+<h3 id="5使用hugo生成新站点">5.使用hugo生成新站点</h3>
+<ul>
+<li><code>hugo new site [your site name]</code></li>
+</ul>
+<p><img src="/img/post/%E4%BD%BF%E7%94%A8git-page+hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/1.png" alt="hugo new site"></p>
+<ul>
+<li>
+<p>使用git 添加远程仓库: <code>git remote add origin https://github.com/haochen233/blog</code></p>
+</li>
+<li>
+<p>从<a href="https://themes.gohugo.io/">hugo theme</a>网站挑选一个心仪的主题,
+<img src="/img/post/%E4%BD%BF%E7%94%A8git-page+hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/mainroad.png" alt="hugo new site">
+点击<strong>download</strong>跳转到仓库首页，复制仓库地址。</p>
+</li>
+<li>
+<p>进入刚才blog仓库下的themes目录下，将主题仓库添加为子模块：<code>git submodule add https://github.com/Vimux/Mainroad.git</code></p>
+</li>
+</ul>
+<p>然后blog仓库根目录下的config.toml,后面追加一行:<code>theme = &quot;mainroad&quot;</code>，表示使用<a href="https://themes.gohugo.io/mainroad/">mainroad</a>主题。</p>
+<ul>
+<li>
+<p>添加第一个博客文件, 例如 first.md：<code>hugo new post/first.md</code></p>
+</li>
+<li>
+<p>在本地运行博客服务器: <code>hugo server -D</code>，浏览器输入https://127.0.0.1:1313即可访问到博客。</p>
+</li>
+</ul>
+<h3 id="6将hugo静态网站部署到git-page上">6.将hugo静态网站部署到git page上。</h3>
+<ul>
+<li>
+<p>使用hugo 发布静态资源：<code>hugo -D</code> ,此时会在blog仓库下的根目录下生成public目录，这个目录就包含了博客需要的所有静态资源。
+<img src="/img/post/%E4%BD%BF%E7%94%A8git-page+hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/public.png" alt="hugo new site"></p>
+</li>
+<li>
+<p>因为每发布一次新博客，public目录就会更新,所以需要将public作为生产环境的仓库<strong>git page</strong>，需要先删除掉之前的public目录，将<strong>git page</strong>仓库添加到public目录下: <code>rm -rf public</code>, <code>git submodule add https://github.com/haochen233/haochen233.github.io.git public</code></p>
+</li>
+<li>
+<p>然后hugo发布用的public就是<strong>git page</strong>仓库了，每次<code>hugo -D</code>后public目录下的子模块就可以commit和push到<strong>git page</strong>仓库了。</p>
+</li>
+</ul>
+<h3 id="7访问站点">7.访问站点</h3>
+<p>在将public下的文件推送到github上后，就可以通过https://username.github.io/来访问博客站点了。</p>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/github/" rel="tag">github</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/hugo/" rel="tag">hugo</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<figure class="authorbox__avatar">
+		<img alt="zhang chenhao avatar" src="/img/avatar.jpg" class="avatar" height="90" width="90">
+	</figure>
+	<div class="authorbox__header">
+		<span class="authorbox__name">About zhang chenhao</span>
+	</div>
+	<div class="authorbox__description">
+		Unknow gopher be willing to learn and share.
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/post/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">第一篇博客</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2021 haochen233.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+<script src="/js/custom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+</body>
+</html>
