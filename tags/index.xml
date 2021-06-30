@@ -5,6 +5,25 @@
     <link>https://haochen233.github.io/tags/</link>
     <description>Recent content in Tags on haochen233 tech</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://haochen233.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Wed, 30 Jun 2021 13:28:33 +0800</lastBuildDate><atom:link href="https://haochen233.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>github</title>
+      <link>https://haochen233.github.io/tags/github/</link>
+      <pubDate>Wed, 30 Jun 2021 13:28:33 +0800</pubDate>
+      
+      <guid>https://haochen233.github.io/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>https://haochen233.github.io/tags/hugo/</link>
+      <pubDate>Wed, 30 Jun 2021 13:28:33 +0800</pubDate>
+      
+      <guid>https://haochen233.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

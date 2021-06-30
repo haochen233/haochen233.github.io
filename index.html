@@ -34,16 +34,31 @@
 	<div class="container header__container">
 		
 	<div class="logo logo--mixed">
-		<a class="logo__link" href="/" title="gopher" rel="home">
+		<a class="logo__link" href="/" title="haochen233" rel="home">
 			<div class="logo__item logo__imagebox">
 					<img class="logo__img" src="/img/avatar.jpg">
 				</div><div class="logo__item logo__text">
-					<div class="logo__title">gopher</div>
+					<div class="logo__title">haochen233</div>
 					<div class="logo__tagline">why not me?</div>
 				</div>
 		</a>
 	</div>
-		<div class="divider"></div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">
+				
+				<span class="menu__text">about me</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
 	</div>
 </header>
 		<div class="wrapper flex">
@@ -51,6 +66,23 @@
 			
 <main class="main list" role="main">
 	<article class="list__item post">
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/%E4%BD%BF%E7%94%A8git-page&#43;hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" rel="bookmark">
+			使用git Page&#43;hugo搭建博客
+			</a>
+		</h2>
+		<div class="list__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">zhang chenhao</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-06-30T13:28:33&#43;08:00">2021-06-30</time></div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		1.使用环境准备：  安装go：hugo需要版本大于等于1.16。可以从Go官网下载所需要的go版本。  下载完成解压后需要配置环境变量（PATH、GOAPTH等） 检查go开发环境是否配置正确：$ go version   安装git：可以从git官网下载你所需要的系统和版本,这一步就略过了。  2.安装hugo： 使用go get 命令自动获取并安装  开启go mod: go env -w GOMODULE111=on 配置国内因为GFW的原因不能下载第三方包，所以需要配置代理来进行访问：go env -w GOPROXY=https://goproxy.io,direct 使用go get自动安装hugo: go get github.com/gohugoio/hugo 检查是否安装成功: hugo -h  3.为什么使用git page  免费托管 搭建简单  4.在github上创建blog仓库、git page仓库 为什么要创建两个仓库？
+ blog仓库是静态网站的开发环境 git page仓库是生产环境用来发布网站(仓库名必须是username.github.io,到时可以通过这个域名直接访问)。  例如(开发环境仓库)： 例如(生产环境仓库)： 5.使用hugo生成新站点  hugo new site [your site name]    使用git 添加远程仓库: git remote add origin https://github.com/haochen233/blog
+	</div>
+</article><article class="list__item post">
 	<header class="list__header">
 		<h2 class="list__title post__title">
 			<a href="/post/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" rel="bookmark">
@@ -85,8 +117,16 @@
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/%E4%BD%BF%E7%94%A8git-page&#43;hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">使用git Page&#43;hugo搭建博客</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">第一篇博客</a></li>
 		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/github/" title="github">github (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="hugo">hugo (1)</a>
 	</div>
 </div>
 <div class="widget-social widget">

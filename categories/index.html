@@ -33,16 +33,31 @@
 	<div class="container header__container">
 		
 	<div class="logo logo--mixed">
-		<a class="logo__link" href="/" title="gopher" rel="home">
+		<a class="logo__link" href="/" title="haochen233" rel="home">
 			<div class="logo__item logo__imagebox">
 					<img class="logo__img" src="/img/avatar.jpg">
 				</div><div class="logo__item logo__text">
-					<div class="logo__title">gopher</div>
+					<div class="logo__title">haochen233</div>
 					<div class="logo__tagline">why not me?</div>
 				</div>
 		</a>
 	</div>
-		<div class="divider"></div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">
+				
+				<span class="menu__text">about me</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
 	</div>
 </header>
 		<div class="wrapper flex">
@@ -57,7 +72,7 @@
 
 			</div>
 			
-<aside class="sidebar sidebar--left"><div class="widget-search widget">
+<aside class="sidebar"><div class="widget-search widget">
 	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
 		<label>
 			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
@@ -70,8 +85,16 @@
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/%E4%BD%BF%E7%94%A8git-page&#43;hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">使用git Page&#43;hugo搭建博客</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">第一篇博客</a></li>
 		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/github/" title="github">github (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="hugo">hugo (1)</a>
 	</div>
 </div>
 <div class="widget-social widget">
