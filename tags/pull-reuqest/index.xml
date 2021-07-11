@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pull reuqest on 晨昊的博客</title>
+    <link>https://haochen233.github.io/tags/pull-reuqest/</link>
+    <description>Recent content in pull reuqest on 晨昊的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 11 Jul 2021 16:33:51 +0800</lastBuildDate><atom:link href="https://haochen233.github.io/tags/pull-reuqest/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Github Pull Request 三种合并方式</title>
+      <link>https://haochen233.github.io/post/github-pull-request-%E4%B8%89%E7%A7%8D%E5%90%88%E5%B9%B6%E6%96%B9%E5%BC%8F/</link>
+      <pubDate>Sun, 11 Jul 2021 16:33:51 +0800</pubDate>
+      
+      <guid>https://haochen233.github.io/post/github-pull-request-%E4%B8%89%E7%A7%8D%E5%90%88%E5%B9%B6%E6%96%B9%E5%BC%8F/</guid>
+      <description>前言 最近呢在github上开源了一个golang实现的socks5协议的仓库（PS:如果觉得不错点个 star呢，谢谢）。其中关于pull request（下文就简称pr）合并这一块，准备使用git rebase 来得到一条没有分叉的提交历史。</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -5,6 +5,16 @@
     <link>https://haochen233.github.io/categories/</link>
     <description>Recent content in Categories on 晨昊的博客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://haochen233.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Sun, 11 Jul 2021 16:33:51 +0800</lastBuildDate><atom:link href="https://haochen233.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>git</title>
+      <link>https://haochen233.github.io/categories/git/</link>
+      <pubDate>Sun, 11 Jul 2021 16:33:51 +0800</pubDate>
+      
+      <guid>https://haochen233.github.io/categories/git/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
