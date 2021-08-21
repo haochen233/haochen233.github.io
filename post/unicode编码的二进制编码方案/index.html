@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Unicode编码的二进制编码方案 - 晨昊的博客</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+		<meta property="og:title" content="Unicode编码的二进制编码方案" />
+<meta property="og:description" content="unicode介绍 unicode 编码为世界上所有字符都分配了一个唯一的数字编号。编号范围从 0x000000 到 0x10FFFF。编号与每个字符都一一对应。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://haochen233.github.io/post/unicode%E7%BC%96%E7%A0%81%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81%E6%96%B9%E6%A1%88/" />
+<meta property="article:published_time" content="2021-08-21T18:11:50+08:00" />
+<meta property="article:modified_time" content="2021-08-21T18:11:50+08:00" />
+
+		<meta itemprop="name" content="Unicode编码的二进制编码方案">
+<meta itemprop="description" content="unicode介绍 unicode 编码为世界上所有字符都分配了一个唯一的数字编号。编号范围从 0x000000 到 0x10FFFF。编号与每个字符都一一对应。">
+<meta itemprop="datePublished" content="2021-08-21T18:11:50+08:00" />
+<meta itemprop="dateModified" content="2021-08-21T18:11:50+08:00" />
+<meta itemprop="wordCount" content="197">
+
+
+
+<meta itemprop="keywords" content="" />
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo logo--mixed">
+		<a class="logo__link" href="/" title="haochen233" rel="home">
+			<div class="logo__item logo__imagebox">
+					<img class="logo__img" src="/img/avatar.jpg">
+				</div><div class="logo__item logo__text">
+					<div class="logo__title">haochen233</div>
+					<div class="logo__tagline">why not me?</div>
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">
+				
+				<span class="menu__text">about me</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Unicode编码的二进制编码方案</h1>
+			<div class="post__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">zhang chenhao</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-08-21T18:11:50&#43;08:00">2021-08-21</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/golang/" rel="category">golang</a>
+	</span>
+</div></div>
+		</header>
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#unicode介绍">unicode介绍</a></li>
+        <li><a href="#unicode-二进制存储方案">unicode 二进制存储方案</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+	</div>
+</div><div class="content post__content clearfix">
+			<h3 id="unicode介绍">unicode介绍</h3>
+<p>unicode 编码为世界上所有字符都分配了一个唯一的数字编号。编号范围从 <code>0x000000</code> 到 <code>0x10FFFF</code>。编号与每个字符都一一对应。</p>
+<p>但是 unicode 本身只规定了每个字符的编号是多少，并没有规定编号如何存储。</p>
+<p>所以就有了多种 unicode 的二进制存储方案。</p>
+<h3 id="unicode-二进制存储方案">unicode 二进制存储方案</h3>
+<p>二进制的存储方案主要由以下几种：</p>
+<ol>
+<li>UTF-32</li>
+<li>UTF-16</li>
+<li>UTF-8</li>
+</ol>
+<h4 id="utf-32">UTF-32</h4>
+<p>这种方案比较简单，UTF-32 用四个字节来表示一个字符（不论编号大小统一用四个字节来存储二进制值），即每次处理都会取四个字节为一个处理单元。</p>
+<blockquote>
+<p>例如：“赑” 的 unicode 编号为 36177，十六进制值为：0x8d51</p>
+<p>utf-32 二进制编码为： <code>00000000 00000000 10001101 01010001</code></p>
+</blockquote>
+<p>因为在内存中存储数据有大小端两种模式，所以UTF-32中也有两种编码方式：</p>
+<ul>
+<li>UTF-32BE：大端序</li>
+<li>UTF-32-LE：小端序</li>
+</ul>
+<p>UTF32编码的缺点：</p>
+<ul>
+<li>浪费存储空间：不论编号大小，统一使用4个字节表示。</li>
+</ul>
+<h4 id="utf-16">UTF-16</h4>
+<p>UTF-16 使用变长字节表示</p>
+<ol>
+<li>对于编号在 0x 00 00 到 0x FF FF 之间的字符（常用字符集），直接使用两个字节表示。</li>
+<li>对于编号在 0x 1 00 00 到 0x 10 FF FF 之间的字符，需要用四个字节来表示</li>
+</ol>
+<p>UTF-16 也有字节序的问题所以也有：</p>
+<ul>
+<li>
+<p>UTF-16BE ：大端序</p>
+</li>
+<li>
+<p>UTF-16LE：小端序</p>
+</li>
+</ul>
+<p>UTF-16 相比较 UTF-32 能够更有效的节省存储空间。</p>
+<h4 id="utf-8">UTF-8</h4>
+<p>UTF-8 也是使用变长字节表示, 使用的字节数与 unicode 的编号大小有关，编号越小使用的字节越少，编号大的则使用的字节就越多，使用的字节个数范围从 1 个字节到 4 个字节。</p>
+<p>unicode编号和 utf-8 使用字节数对比表：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">编号范围</th>
+<th>UTF-8 字节数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">0x00  ~ 0x7F ( 0 ~ 127 )</td>
+<td>1</td>
+</tr>
+<tr>
+<td style="text-align:left">0x80 ~ 0x7FF ( 128 ~ 2047 )</td>
+<td>2</td>
+</tr>
+<tr>
+<td style="text-align:left">0x800 ~ 0xFFFF ( 2048 ~ 65535 )</td>
+<td>3</td>
+</tr>
+<tr>
+<td style="text-align:left">0x10000 ~ 0x10FFFF ( &gt; 65535)</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>UTF-8 编码规则：</p>
+<ol>
+<li>
+<p>使用单字节表示的字符，字节的第一位设置为 0，后面的 7 位为这个符号的unicode编号。</p>
+<p>例如:</p>
+<blockquote>
+<p>&lsquo;W&rsquo; 这个字符的unicode 编号为127，则使用单个字节来表示。字节的第1 位为 0，剩下的7为来表示 127 本身。则 &lsquo;W&rsquo; 的UTF-8二进制编码为：</p>
+<p><code>0 1111111</code></p>
+</blockquote>
+</li>
+<li>
+<p>使用n（n &gt; 1）字节表示的字符，第一个字节的前 n 位都设置为 1，第 n+1位设置为 0，其余所有字节的前两位都设为10，剩下的所有的没有被设置的二进制位用来表示 该字符的 unicode 编号。</p>
+<p>例如：</p>
+<blockquote>
+<p>汉字：’赑‘   unicode编号为 36177 。则 UTF-8 用3 个字节来表示这个汉字。</p>
+<p>根据规则，有如下utf-8编码过程：</p>
+<ol>
+<li>
+<p>第一个字节的前 3 位都设置为 1，第 4 位设置为 0：</p>
+<p><code>1110xxxx xxxxxxxx xxxxxxxx</code></p>
+</li>
+<li>
+<p>第 2，3 字节的前两位设置为 10：</p>
+<p><code>1110xxxx 10xxxxxx 10xxxxxx</code></p>
+</li>
+<li>
+<p>剩下的所有二进制位 x 用来表示 unicode 编号值 36177（十进制），二进制（10001101 01010001）</p>
+<p><code>11101000 10110101 10010001</code></p>
+</li>
+<li>
+<p>可以发现剩下的 x 都已经被用来表示 unicode 编号了。</p>
+</li>
+</ol>
+</blockquote>
+</li>
+</ol>
+<p>UTF-8 的处理单元为1个字节，所以不需要考虑字节序</p>
+<p>很显然，UTF-8 能够合理有效的利用空间来存储 unicode 字符。所以很多地方都普遍使用 UTF-8 编码。</p>
+
+		</div>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<figure class="authorbox__avatar">
+		<img alt="zhang chenhao avatar" src="/img/avatar.jpg" class="avatar" height="90" width="90">
+	</figure>
+	<div class="authorbox__header">
+		<span class="authorbox__name">About zhang chenhao</span>
+	</div>
+	<div class="authorbox__description">
+		Unknow gopher be willing to learn and share.
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/post/github-pull-request-%E4%B8%89%E7%A7%8D%E5%90%88%E5%B9%B6%E6%96%B9%E5%BC%8F/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">Github Pull Request 三种合并方式</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2021 haochen233.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+<script src="/js/custom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>golang on 晨昊的博客</title>
+    <link>https://haochen233.github.io/categories/golang/</link>
+    <description>Recent content in golang on 晨昊的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 21 Aug 2021 18:11:50 +0800</lastBuildDate><atom:link href="https://haochen233.github.io/categories/golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Unicode编码的二进制编码方案</title>
+      <link>https://haochen233.github.io/post/unicode%E7%BC%96%E7%A0%81%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81%E6%96%B9%E6%A1%88/</link>
+      <pubDate>Sat, 21 Aug 2021 18:11:50 +0800</pubDate>
+      
+      <guid>https://haochen233.github.io/post/unicode%E7%BC%96%E7%A0%81%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81%E6%96%B9%E6%A1%88/</guid>
+      <description>unicode介绍 unicode 编码为世界上所有字符都分配了一个唯一的数字编号。编号范围从 0x000000 到 0x10FFFF。编号与每个字符都一一对应。</description>
+    </item>
+    
+  </channel>
+</rss>
